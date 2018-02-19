@@ -13,4 +13,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Views\Home\Groenten - Copy.cshtml.cs">
+      <DependentUpon>Groenten - Copy.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

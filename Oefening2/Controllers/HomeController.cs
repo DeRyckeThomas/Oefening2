@@ -8,9 +8,21 @@ namespace Oefening2.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index(string name)
+        private string[] groenten = {"Broccoli", "Spruitjes", "Wortels", "Spinazie" };
+        public ViewResult Index(string name)
         {
-            return $"Hallo {name}";
+            ViewBag.Groet = DateTime.Now.Hour < 12 ? "Goeiemorgen" : "Goeienamiddag";
+            return View();
+        }
+        public ViewResult Groenten(string zoekGroente)
+        {
+            ViewBag.Groenten = groenten;
+            if (!string.IsNullOrEmpty(zoekGroente))
+            {
+                ViewBag.Zoekresultaat = $"de gezochte groente is de {Array.IndexOf(groenten, zoekGroente) + 1}e uit de lijst";
+            }
+            
+            return View();
         }
     }
 }
