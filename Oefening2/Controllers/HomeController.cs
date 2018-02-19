@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyHowest;
 
 namespace Oefening2.Controllers
 {
@@ -22,6 +23,17 @@ namespace Oefening2.Controllers
                 ViewBag.Zoekresultaat = $"de gezochte groente is de {Array.IndexOf(groenten, zoekGroente) + 1}e uit de lijst";
             }
             
+            return View();
+        }
+
+        public ViewResult Student()
+        {
+            List<Student> studenten = new List<Student>
+            {
+                new Student { Id = 23, Naam = "Jeff", AfstudeerGraad = Graad.voldoening },
+                new Student { Id = 21, Naam = "Marie", AfstudeerGraad = Graad.Onderscheiding},
+            };
+            ViewBag.Studenten = studenten;
             return View();
         }
     }
